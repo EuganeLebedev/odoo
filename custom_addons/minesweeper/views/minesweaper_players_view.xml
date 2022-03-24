@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="minesweaper_players_action" model="ir.actions.act_window">
+<!--        <field name="id">Id</field>-->
+        <field name="name">Players</field>
+        <field name="res_model">minesweeper.players</field>
+        <field name="view_mode">tree,form,kanban,graph</field>
+    </record>
+
+    <record id="minesweaper_players_view_tree" model="ir.ui.view">
+        <field name="name">minesweeper.players.tree</field>
+        <field name="model">minesweeper.players</field>
+        <field name="arch" type="xml">
+            <tree string="Minesweaper_players">
+                <field name="nickname"/>
+                <field name="firstname"/>
+                <field name="lastname"/>
+                <field name="country_from_id"/>
+            </tree>
+        </field>
+    </record>
+
+        <record id="minesweaper_players_view_graaph" model="ir.ui.view">
+        <field name="name">minesweeper.players.graph</field>
+        <field name="model">minesweeper.players</field>
+        <field name="arch" type="xml">
+            <graph string="Minesweaper_players">
+                <field name="nickname"/>
+                <field name="games_win" type="measure"/>
+                <field name="games_lose" type="measure"/>
+                <field name="effectiveness" type="measure"/>
+                <field name="total_score" type="measure"/>
+                <field name="country_from_id" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+
+    <record id="minesweaper_players_view_form" model="ir.ui.view">
+        <field name="name">minesweeper.players.form</field>
+        <field name="model">minesweeper.players</field>
+        <field name="arch" type="xml">
+            <form string="Minesweaper player">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="id"/>
+                            <field name="nickname"/>
+                            <field name="total_score"/>
+
+                            <field name="effectiveness"/>
+                        </group>
+                        <group>
+                            <field name="country_from_id"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <field name="awards_ids" widget="many2many_tags"/>
+                        </group>
+                        <group></group>
+
+
+                    </group>
+                    <notebook>
+                            <page string="Description">
+                                <field name="description"/>
+                            </page>
+                            <page string="Games">
+                                <field name="games_ids"/>
+                            </page>
+                            <page string="Create info">
+                                <group>
+                                    <group>
+                                    <field name="create_date"/>
+                                    <field name="create_uid"/>
+                                    </group>
+                                    <group>
+                                        <field name="write_date"/>
+                                        <field name="write_uid"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="minesweaper_players_view_search" model="ir.ui.view">
+        <field name="name">minesweeper.players.search</field>
+        <field name="model">minesweeper.players</field>
+        <field name="arch" type="xml">
+            <search string="Minesweaper players">
+                <field name="nickname"/>
+                <field name="firstname"/>
+                <field name="lastname"/>
+                <field name="country_from_id"/>
+                <filter string="Active and inactive" name="all_records" domain="['|', ('active', '=', True), ('active', '=', False)]"/>
+                <separator/>
+                <filter string="Players only from BY" name="only_from_BY" domain="[('country_from_id', '=', 'BY')]"/>
+                <filter string="Players only from RU" name="only_from_RU" domain="[('country_from_id', '=', 'RU')]"/>
+<!--                <group expand="1" string="Group by">-->
+                    <filter string="Group by country" name="group_by_country" context="{'group_by': 'country_from_id'}"/>
+                    <filter string="Group by player" name="group_by_player" context="{'group_by': 'nickname'}"/>
+<!--                    <filter string="Group by field" name="group_by_field" context="{'group_by': 'games_ids.field_id'}"/>-->
+<!--                </group>-->
+            </search>
+        </field>
+    </record>
+
+    <record id="minesweaper_players_view_kanban" model="ir.ui.view">
+        <field name="name">minesweeper.players.kanban</field>
+        <field name="model">minesweeper.players</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="nickname"/>
+                <field name="effectiveness"/>
+                <field name="total_score"/>
+                <field name="country_from_id"/>
+                <field name="games_win"/>
+                <field name="games_lose"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click kanban">
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title">
+                                    Nickname: <field name="nickname"/>
+                                </strong>
+                                <ul>
+                                    <li>Country from: <field name="country_from_id"></field></li>
+                                    <li>Games win: <field name="games_win"></field></li>
+                                    <li>Games lose: <field name="games_lose"></field></li>
+                                    <li>Effectiveness: <field name="effectiveness"></field></li>
+                                    <li>Total score: <field name="total_score"></field></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+</odoo>

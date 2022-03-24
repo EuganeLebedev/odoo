@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_players_model,access_players_model,model_minesweeper_players,base.group_user,1,1,1,1
+access_games_model,access_games_model,model_minesweeper_games,base.group_user,1,1,1,1
+access_fields_model,access_fields_model,model_minesweeper_fields,base.group_user,1,1,1,1
+access_awards_model,access_awards_model,model_minesweeper_awards,base.group_user,1,1,1,1

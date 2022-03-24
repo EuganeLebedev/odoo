@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="minesweaper_awards_action" model="ir.actions.act_window">
+        <field name="name">Awards</field>
+        <field name="res_model">minesweeper.awards</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record id="minesweaper_awards_view_tree" model="ir.ui.view">
+        <field name="name">minesweeper.awards.tree</field>
+        <field name="model">minesweeper.awards</field>
+        <field name="arch" type="xml">
+            <tree string="Minesweaper awards">
+                <field name="name"/>
+                <field name="requirements"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="minesweaper_games_view_form" model="ir.ui.view">
+        <field name="name">minesweeper.awards.form</field>
+        <field name="model">minesweeper.awards</field>
+        <field name="arch" type="xml">
+            <form string="Minesweaper awards">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="requirements"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+<!--    <record id="minesweaper_awards_view_search" model="ir.ui.view">-->
+<!--        <field name="name">minesweeper.games.search</field>-->
+<!--        <field name="model">minesweeper.games</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <search string="Minesweaper awards">-->
+<!--                <field name="player_id"/>-->
+<!--                <field name="field_id"/>-->
+<!--                <field name="score"/>-->
+<!--                <field name="date"/>-->
+<!--                <filter string="Games on newbie fields" name="games_on_newbie_fields" domain="[('field_id', '=', 'Newbie')]"/>-->
+<!--                <filter string="Games on amateur fields" name="games_on_amateur_fields" domain="[('field_id', '=', 'Amateur')]"/>-->
+<!--                <filter string="Games on professional fields" name="games_on_professional_fields" domain="[('field_id', '=', 'Professional')]"/>-->
+<!--                <filter string="Games on custom fields" name="games_on_custom_fields" domain="[('field_id', '=', 'Custom')]"/>-->
+<!--                <separator/>-->
+<!--                <filter string="Players only from BY" name="only_from_BY" domain="[('player_id.country_from_id', '=', 'BY')]"/>-->
+<!--                <filter string="Players only from RU" name="only_from_RU" domain="[('player_id.country_from_id', '=', 'RU')]"/>-->
+<!--&lt;!&ndash;                <group expand="1" string="Group by">&ndash;&gt;-->
+<!--                <filter string="Group by field" name="group_by_field" context="{'group_by': 'field_id'}"/>-->
+<!--                <filter string="Group by player" name="group_by_player" context="{'group_by': 'player_id'}"/>-->
+<!--&lt;!&ndash;                </group>&ndash;&gt;-->
+<!--            </search>-->
+<!--        </field>-->
+<!--    </record>-->
+
+</odoo>

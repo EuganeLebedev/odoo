@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem id="minesweaper_menu_root" name="Minesweaper games">
+        <menuitem id="minesweaper_players_games" name="Players">
+            <menuitem id="players_model_menu_action" action="minesweaper_players_action"/>
+        </menuitem>
+
+        <menuitem id="minesweaper_menu_fields" name="Fields">
+            <menuitem id="fields_model_menu_action" action="minesweaper_fields_action"/>
+        </menuitem>
+
+        <menuitem id="minesweaper_menu_games" name="Games">
+            <menuitem id="games_model_menu_action" action="minesweaper_games_action"/>
+        </menuitem>
+
+        <menuitem id="minesweaper_menu_awards" name="Awards">
+            <menuitem id="awards_model_menu_action" action="minesweaper_awards_action"/>
+        </menuitem>
+
+    </menuitem>
+</odoo>
