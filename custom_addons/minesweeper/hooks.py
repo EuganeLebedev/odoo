@@ -6,6 +6,9 @@ from odoo import api, SUPERUSER_ID
 import random
 
 def fill_awards_from_web(cr):
+    """
+    Generate awards from WEB
+    """
     env = api.Environment(cr, SUPERUSER_ID, {})
     awards = get_data_from_site.get_awards_from_site()
     for award in awards:
@@ -17,6 +20,9 @@ def fill_awards_from_web(cr):
         env['minesweeper.awards'].create(vals)
 
 def create_random_games_data(env, player):
+    """
+    Generate random games for players
+    """
     detes = [datetime.date.today() - datetime.timedelta(days=i) for i in range(1, 10)]
     for _ in range(1, random.randint(5, 15)):
 
@@ -34,6 +40,9 @@ def create_random_games_data(env, player):
         env['minesweeper.games'].create(games_val)
 
 def fill_players_from_web(cr):
+    """
+    Generate players from WEB
+    """
     env = api.Environment(cr, SUPERUSER_ID, {})
     players = get_data_from_site.get_players_from_site()
     fields = env["minesweeper.fields"].search([])
