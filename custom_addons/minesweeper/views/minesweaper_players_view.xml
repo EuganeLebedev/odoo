@@ -99,6 +99,8 @@
                 <separator/>
                 <filter string="Players only from BY" name="only_from_BY" domain="[('country_from_id', '=', 'BY')]"/>
                 <filter string="Players only from RU" name="only_from_RU" domain="[('country_from_id', '=', 'RU')]"/>
+                <filter string="Players only from UA" name="only_from_RU" domain="[('country_from_id', '=', 'UA')]"/>
+
 <!--                <group expand="1" string="Group by">-->
                     <filter string="Group by country" name="group_by_country" context="{'group_by': 'country_from_id'}"/>
                     <filter string="Group by player" name="group_by_player" context="{'group_by': 'nickname'}"/>

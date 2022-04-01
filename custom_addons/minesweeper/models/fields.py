@@ -5,7 +5,6 @@ class Fields(models.Model):
     _name = 'minesweeper.fields'
     _description = 'Minesweeper fields'
     name = fields.Char()
-    # image = fields.Image(string="Image")
     games_ids = fields.One2many('minesweeper.games', 'field_id', string="Games")
     x_size = fields.Integer()
     y_size = fields.Integer()

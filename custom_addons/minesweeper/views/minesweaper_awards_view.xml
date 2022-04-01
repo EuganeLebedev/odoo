@@ -33,29 +33,4 @@
             </form>
         </field>
     </record>
-
-<!--    <record id="minesweaper_awards_view_search" model="ir.ui.view">-->
-<!--        <field name="name">minesweeper.games.search</field>-->
-<!--        <field name="model">minesweeper.games</field>-->
-<!--        <field name="arch" type="xml">-->
-<!--            <search string="Minesweaper awards">-->
-<!--                <field name="player_id"/>-->
-<!--                <field name="field_id"/>-->
-<!--                <field name="score"/>-->
-<!--                <field name="date"/>-->
-<!--                <filter string="Games on newbie fields" name="games_on_newbie_fields" domain="[('field_id', '=', 'Newbie')]"/>-->
-<!--                <filter string="Games on amateur fields" name="games_on_amateur_fields" domain="[('field_id', '=', 'Amateur')]"/>-->
-<!--                <filter string="Games on professional fields" name="games_on_professional_fields" domain="[('field_id', '=', 'Professional')]"/>-->
-<!--                <filter string="Games on custom fields" name="games_on_custom_fields" domain="[('field_id', '=', 'Custom')]"/>-->
-<!--                <separator/>-->
-<!--                <filter string="Players only from BY" name="only_from_BY" domain="[('player_id.country_from_id', '=', 'BY')]"/>-->
-<!--                <filter string="Players only from RU" name="only_from_RU" domain="[('player_id.country_from_id', '=', 'RU')]"/>-->
-<!--&lt;!&ndash;                <group expand="1" string="Group by">&ndash;&gt;-->
-<!--                <filter string="Group by field" name="group_by_field" context="{'group_by': 'field_id'}"/>-->
-<!--                <filter string="Group by player" name="group_by_player" context="{'group_by': 'player_id'}"/>-->
-<!--&lt;!&ndash;                </group>&ndash;&gt;-->
-<!--            </search>-->
-<!--        </field>-->
-<!--    </record>-->
-
 </odoo>
